@@ -20,6 +20,6 @@ public class BirthdayTest {
         birthday.addCandle(2);
         birthday.addCandle(2);
         birthday.addCandle(2);
-        assertThat(birthday.blowCandles).isEqualTo(3);
+        assertThat(birthday.blowCandles()).isEqualTo(3);
     }
 }
