@@ -35,4 +35,8 @@ public class Birthday {
     private boolean isCandleMaxHeight(int candle) {
         return Objects.equals(candle, candles.getLast());
     }
+
+    public int getAge() {
+        return age;
+    }
 }
