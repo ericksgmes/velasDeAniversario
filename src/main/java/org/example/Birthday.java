@@ -1,6 +1,8 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Objects;
 
 public class Birthday {
     private int age;
@@ -15,8 +17,11 @@ public class Birthday {
 
     public int blowCandles() {
         int blowedCandles = 0;
+        Collections.sort(candles);
         for (int i = 0; i < age; i++) {
-            blowedCandles++;
+            if (Objects.equals(candles.get(i), candles.getLast())) {
+                blowedCandles++;
+            }
         }
         return blowedCandles;
     }

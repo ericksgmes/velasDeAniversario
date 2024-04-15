@@ -7,11 +7,6 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.*;
 
 public class BirthdayTest {
-    @Test
-    @DisplayName("test")
-    void test(){
-        System.out.printf("fail");
-    }
     private Birthday birthday;
     @BeforeEach
     void setUp(){
