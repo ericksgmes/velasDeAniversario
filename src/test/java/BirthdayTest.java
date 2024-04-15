@@ -33,4 +33,11 @@ public class BirthdayTest {
         assertThat(birthday.blowCandles()).isEqualTo(2);
 
     }
+
+    @Test
+    @DisplayName("Should only add age number of candles")
+    void shouldOnlyAddAgeNumberOfCandles() {
+        Birthday birthday = new Birthday(0);
+        assertThat(birthday.addCandle(1)).isEqualTo(0);
+    }
 }
