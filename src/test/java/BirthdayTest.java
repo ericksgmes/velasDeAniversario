@@ -37,7 +37,10 @@ public class BirthdayTest {
     @Test
     @DisplayName("Should only add age number of candles")
     void shouldOnlyAddAgeNumberOfCandles() {
-        Birthday birthday = new Birthday(0);
-        assertThat(birthday.addCandle(1)).isEqualTo(0);
+        Birthday birthday = new Birthday(2);
+        birthday.addCandle(12);
+        birthday.addCandle(4);
+        int returnedVal = birthday.addCandle(2);
+        assertThat(returnedVal).isEqualTo(0);
     }
 }
