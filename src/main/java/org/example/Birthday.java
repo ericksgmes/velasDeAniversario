@@ -14,6 +14,10 @@ public class Birthday {
     }
 
     public int blowCandles() {
-        return 0;
+        int blowedCandles = 0;
+        for (int i = 0; i < age; i++) {
+            blowedCandles++;
+        }
+        return blowedCandles;
     }
 }

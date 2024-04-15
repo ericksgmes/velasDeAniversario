@@ -12,14 +12,30 @@ public class BirthdayTest {
     void test(){
         System.out.printf("fail");
     }
+    private Birthday birthday;
+    @BeforeEach
+    void setUp(){
+        birthday = new Birthday(4);
+    }
 
     @Test
     @DisplayName("Should blow out every candle")
     void shouldBlowOutEveryCandle(){
-        Birthday birthday = new Birthday(3);
         birthday.addCandle(2);
         birthday.addCandle(2);
         birthday.addCandle(2);
-        assertThat(birthday.blowCandles()).isEqualTo(3);
+        birthday.addCandle(2);
+        assertThat(birthday.blowCandles()).isEqualTo(4);
+    }
+
+    @Test
+    @DisplayName("Should Blow Only The Highest Candles")
+    void shouldBlowOnlyTheHighestCandles(){
+        birthday.addCandle(4);
+        birthday.addCandle(4);
+        birthday.addCandle(1);
+        birthday.addCandle(2);
+        assertThat(birthday.blowCandles()).isEqualTo(2);
+
     }
 }
