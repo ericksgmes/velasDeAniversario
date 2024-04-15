@@ -7,6 +7,7 @@ import java.util.Objects;
 public class Birthday {
     private int age;
     private ArrayList<Integer> candles = new ArrayList<>();
+    
     public Birthday(int age) {
         this.age = age;
     }
@@ -16,6 +17,9 @@ public class Birthday {
     }
 
     public int blowCandles() {
+        if(candles.isEmpty() || candles.size() != this.age){
+            return 0;
+        }
         int blowedCandles = 0;
         Collections.sort(candles);
         for (int i = 0; i < age; i++) {
